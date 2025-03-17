@@ -77,7 +77,7 @@ namespace StopWatch
             {
                 throw new UsernameAndApiTokenNotSetException();
             }
-            request.AddHeader("Authorization", "Basic " + System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($"{_username}:{_apiToken}")));
+            request.AddHeader("Authorization", "Bearer " + _apiToken);
         }
 
         private Logger _logger = Logger.Instance;
